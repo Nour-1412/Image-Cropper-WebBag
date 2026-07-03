@@ -239,7 +239,7 @@ cropBtn.addEventListener("click", () => {
     );
 
     croppedPreview.src = tempCanvas.toDataURL("image/png");
-
+downloadBtn.style.display = "block";
 });
 // ==========================
 // DOWNLOAD
