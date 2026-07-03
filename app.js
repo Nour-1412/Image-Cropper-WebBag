@@ -93,3 +93,43 @@ ctx.strokeRect(
     reader.readAsDataURL(file);
 
 });
+
+// ==========================
+// MOVE CROP RECTANGLE
+// ==========================
+
+let isDragging = false;
+
+canvas.addEventListener("pointerdown", (e) => {
+
+    isDragging = true;
+
+});
+
+canvas.addEventListener("pointerup", () => {
+
+    isDragging = false;
+
+});
+
+canvas.addEventListener("pointermove", (e) => {
+
+    if (!isDragging) return;
+
+    const rect = canvas.getBoundingClientRect();
+
+    cropX = e.clientX - rect.left - cropWidth / 2;
+
+    cropY = e.clientY - rect.top - cropHeight / 2;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.drawImage(currentImage, 0, 0);
+
+    ctx.strokeStyle = "#2563eb";
+
+    ctx.lineWidth = 3;
+
+    ctx.strokeRect(cropX, cropY, cropWidth, cropHeight);
+
+});
