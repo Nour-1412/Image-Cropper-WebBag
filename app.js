@@ -98,23 +98,7 @@ ctx.strokeRect(
 // MOVE CROP RECTANGLE
 // ==========================
 
-let isDragging = false;
 
-canvas.addEventListener("pointerdown", (e) => {
-
-    isDragging = true;
-
-});
-
-canvas.addEventListener("pointerup", () => {
-
-    isDragging = false;
-
-});
-
-canvas.addEventListener("pointermove", (e) => {
-
-    if (!isDragging) return;
 
     const rect = canvas.getBoundingClientRect();
 
@@ -162,5 +146,78 @@ canvas.addEventListener("click", () => {
     cropX += 20;
 
     drawCanvas();
+
+});
+// ==========================
+// DRAG CROP RECTANGLE
+// ==========================
+
+let isDragging = false;
+
+let offsetX = 0;
+
+let offsetY = 0;
+
+canvas.addEventListener("pointerdown", (e) => {
+
+    const rect = canvas.getBoundingClientRect();
+
+    const scaleX = canvas.width / rect.width;
+
+    const scaleY = canvas.height / rect.height;
+
+    const x = (e.clientX - rect.left) * scaleX;
+
+    const y = (e.clientY - rect.top) * scaleY;
+
+    if (
+
+        x >= cropX &&
+
+        x <= cropX + cropWidth &&
+
+        y >= cropY &&
+
+        y <= cropY + cropHeight
+
+    ) {
+
+        isDragging = true;
+
+        offsetX = x - cropX;
+
+        offsetY = y - cropY;
+
+    }
+
+});
+
+canvas.addEventListener("pointermove", (e) => {
+
+    if (!isDragging) return;
+
+    const rect = canvas.getBoundingClientRect();
+
+    const scaleX = canvas.width / rect.width;
+
+    const scaleY = canvas.height / rect.height;
+
+    cropX = (e.clientX - rect.left) * scaleX - offsetX;
+
+    cropY = (e.clientY - rect.top) * scaleY - offsetY;
+
+    drawCanvas();
+
+});
+
+canvas.addEventListener("pointerup", () => {
+
+    isDragging = false;
+
+});
+
+canvas.addEventListener("pointerleave", () => {
+
+    isDragging = false;
 
 });
