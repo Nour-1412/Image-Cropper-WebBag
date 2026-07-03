@@ -1,3 +1,601 @@
+/* ==========================
+   GLOBAL STYLES
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#f4f7fb;
+
+    color:#222;
+
+    line-height:1.6;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+button{
+
+    font-family:inherit;
+
+}
+
+.hero{
+
+    text-align:center;
+
+    padding:70px 20px 40px;
+
+}
+
+.hero h1{
+
+    font-size:52px;
+
+    color:#2563eb;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#666;
+
+    font-size:20px;
+
+}
+/*==========================
+UPLOAD SECTION
+==========================*/
+
+.upload-section{
+
+    max-width:900px;
+
+    margin:40px auto;
+
+    padding:0 20px;
+
+}
+
+.upload-card{
+
+    background:#fff;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.upload-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.badge{
+
+    background:#e8f0ff;
+
+    color:#2563eb;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-weight:700;
+
+}
+
+.drop-area{
+
+    border:3px dashed #b7cdfb;
+
+    border-radius:20px;
+
+    padding:60px 20px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.drop-area:hover{
+
+    background:#f8fbff;
+
+    border-color:#2563eb;
+
+}
+
+.upload-icon{
+
+    font-size:70px;
+
+    margin-bottom:20px;
+
+}
+
+.choose-btn{
+
+    margin-top:20px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:15px 35px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+.choose-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/*==========================
+CONTROLS
+==========================*/
+
+.resize-controls{
+
+    max-width:900px;
+
+    margin:40px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+    padding:0 20px;
+
+}
+
+.control-box{
+
+    background:#fff;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+
+}
+
+.control-box label{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    font-weight:700;
+
+}
+
+.control-box input{
+
+    width:100%;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+}
+
+.checkbox-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-weight:700;
+
+}
+
+/*==========================
+PREVIEW
+==========================*/
+
+.preview-section{
+
+    max-width:1100px;
+
+    margin:50px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:25px;
+
+    padding:0 20px;
+
+}
+
+.preview-card{
+
+    background:#fff;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+}
+
+.preview-card img{
+
+    width:100%;
+
+    max-height:420px;
+
+    object-fit:contain;
+
+    margin-top:20px;
+
+}
+
+/*==========================
+BUTTONS
+==========================*/
+
+.action-section{
+
+    text-align:center;
+
+    margin:40px;
+
+}
+
+.btn-primary{
+
+    background:#2563eb;
+
+    color:#fff;
+
+    border:none;
+
+    padding:16px 40px;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    margin:10px;
+
+}
+
+.btn-success{
+
+    background:#16a34a;
+
+    color:#fff;
+
+    border:none;
+
+    padding:16px 40px;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    margin:10px;
+
+    display:inline-block;
+
+}
+
+.btn-primary:hover,
+.btn-success:hover{
+
+    transform:translateY(-3px);
+
+}
+body{
+    background:#f4f7fb !important;
+}
+
+.hero{
+    text-align:center !important;
+}
+
+.hero h1{
+    color:#2563eb !important;
+    font-size:52px !important;
+}
+
+/*==========================
+IMAGE INFO
+==========================*/
+
+.image-info{
+
+    margin:15px 0;
+
+    text-align:left;
+
+}
+
+.image-info p{
+
+    margin:6px 0;
+
+    color:#555;
+
+    font-size:15px;
+
+    font-weight:600;
+
+   }
+/*==========================
+SELECT
+==========================*/
+
+.control-box select{
+
+    width:100%;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    background:#fff;
+
+    font-size:16px;
+
+   }
+/*==========================
+DRAGGING
+==========================*/
+
+.drop-area.dragging{
+
+    border-color:#2563eb;
+
+    background:#eef5ff;
+
+    transform:scale(1.02);
+
+   }
+/*==========================
+MOBILE RESPONSIVE
+==========================*/
+
+@media (max-width:768px){
+
+.hero{
+
+    padding:45px 20px 25px;
+
+}
+
+.hero h1{
+
+    font-size:34px;
+
+}
+
+.hero p{
+
+    font-size:17px;
+
+}
+
+.upload-card{
+
+    padding:22px;
+
+}
+
+.upload-header{
+
+    flex-direction:column;
+
+    gap:15px;
+
+    text-align:center;
+
+}
+
+.drop-area{
+
+    padding:40px 15px;
+
+}
+
+.upload-icon{
+
+    font-size:55px;
+
+}
+
+.preview-section{
+
+    grid-template-columns:1fr;
+
+}
+
+.preview-card img{
+
+    max-height:260px;
+
+}
+
+.action-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    padding:0 20px;
+
+}
+
+.btn-primary,
+.btn-success{
+
+    width:100%;
+
+    margin:0;
+
+}
+
+.resize-controls{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+/*==========================
+LOADING
+==========================*/
+
+.loading-box{
+
+    display:none;
+
+    text-align:center;
+
+    margin:25px 0;
+
+}
+
+.loader{
+
+    width:45px;
+
+    height:45px;
+
+    margin:auto;
+
+    border:5px solid #e5e7eb;
+
+    border-top:5px solid #2563eb;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+.loading-box p{
+
+    margin-top:15px;
+
+    font-weight:700;
+
+    color:#2563eb;
+
+}
+
+@keyframes spin{
+
+    100%{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+/*==========================
+DISABLED BUTTONS
+==========================*/
+
+button:disabled{
+
+    opacity:.5;
+
+    cursor:not-allowed;
+
+    transform:none !important;
+
+}
+/*==========================
+RESET BUTTON
+==========================*/
+
+.btn-reset{
+
+    background:#ef4444;
+
+    color:#fff;
+
+    border:none;
+
+    padding:16px 40px;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    margin:10px;
+
+}
+
+.btn-reset:hover{
+
+    transform:translateY(-3px);
+
+}
 /*==========================
 CANVAS
 ==========================*/
