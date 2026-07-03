@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Image Cropper | WebBag</title>
+
+    <meta name="description"
+        content="Crop JPG, PNG, and WEBP images online for free. Choose custom or preset aspect ratios, preview the result, and download high-quality cropped images instantly with WebBag.">
+
+    <meta name="keywords"
+        content="Image Cropper, Crop Image Online, Crop JPG, Crop PNG, Crop WEBP, Free Image Crop Tool, WebBag">
+
+    <meta name="author" content="WebBag">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <section class="hero">
+
+    <h1>
+
+        Image Cropper
+
+    </h1>
+
+    <p>
+
+        Crop JPG, PNG and WEBP images online for free with custom or preset aspect ratios.
+
+    </p>
+
+</section>
+
+<section class="upload-section">
+
+    <div class="upload-card">
+
+        <div class="upload-header">
+
+            <h2>
+
+                Upload Image
+
+            </h2>
+
+            <span class="badge">
+
+                Free Tool
+
+            </span>
+
+        </div>
+
+        <div
+            id="dropArea"
+            class="drop-area">
+
+            <div class="upload-icon">
+
+                ✂️
+
+            </div>
+
+            <h3>
+
+                Drag & Drop your image here
+
+            </h3>
+
+            <p>
+
+                or
+
+            </p>
+
+            <button
+                id="chooseImage"
+                class="choose-btn">
+
+                Choose Image
+
+            </button>
+
+            <input
+                type="file"
+                id="imageInput"
+                accept="image/png,image/jpeg,image/webp"
+                hidden>
+
+            <small>
+
+                JPG • PNG • WEBP
+
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+  <section class="crop-controls">
+
+    <div class="control-card">
+
+        <label>
+
+            Aspect Ratio
+
+        </label>
+
+        <select id="aspectRatio">
+
+            <option value="free">
+
+                Free
+
+            </option>
+
+            <option value="1:1">
+
+                Square (1:1)
+
+            </option>
+
+            <option value="4:3">
+
+                Standard (4:3)
+
+            </option>
+
+            <option value="16:9">
+
+                Widescreen (16:9)
+
+            </option>
+
+            <option value="3:2">
+
+                Photo (3:2)
+
+            </option>
+
+            <option value="9:16">
+
+                Story (9:16)
+
+            </option>
+
+        </select>
+
+    </div>
+
+    <div class="control-card">
+
+        <button
+            id="cropBtn"
+            class="btn-primary">
+
+            Crop Image
+
+        </button>
+
+    </div>
+
+  </section>
+  <section class="preview-section">
+
+    <div class="preview-card">
+
+        <h3>
+
+            Original Image
+
+        </h3>
+
+        <canvas id="imageCanvas"></canvas>
+
+    </div>
+
+    <div class="preview-card">
+
+        <h3>
+
+            Cropped Image
+
+        </h3>
+
+        <img id="croppedPreview">
+
+    </div>
+
+  </section>
+  
