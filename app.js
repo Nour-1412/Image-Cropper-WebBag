@@ -153,3 +153,14 @@ function drawCanvas() {
     );
 
 }
+// ==========================
+// TEST MOVE
+// ==========================
+
+canvas.addEventListener("click", () => {
+
+    cropX += 20;
+
+    drawCanvas();
+
+});
