@@ -627,3 +627,10 @@ CANVAS
     border-radius:15px;
 
 }
+#downloadBtn{
+
+    display:block;
+
+    margin:20px auto 0;
+
+}
