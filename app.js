@@ -61,28 +61,7 @@ imageInput.addEventListener("change", () => {
             canvas.width = img.width;
 
             canvas.height = img.height;
-
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            ctx.drawImage(img, 0, 0);
-
-// إطار القص
-
-ctx.strokeStyle = "#2563eb";
-
-ctx.lineWidth = 3;
-
-ctx.strokeRect(
-
-    cropX,
-
-    cropY,
-
-    cropWidth,
-
-    cropHeight
-
-);
+drawCanvas();
 
         };
 
@@ -94,20 +73,7 @@ ctx.strokeRect(
 
 });
 
-// ==========================
-// MOVE CROP RECTANGLE
-// ==========================
 
-
-
-    const rect = canvas.getBoundingClientRect();
-
-    cropX = e.clientX - rect.left - cropWidth / 2;
-
-    cropY = e.clientY - rect.top - cropHeight / 2;
-
-    drawCanvas();
-});
 // ==========================
 // DRAW CANVAS
 // ==========================
