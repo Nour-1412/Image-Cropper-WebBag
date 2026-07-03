@@ -187,3 +187,44 @@ canvas.addEventListener("pointerleave", () => {
     isDragging = false;
 
 });
+// ==========================
+// CROP IMAGE
+// ==========================
+
+cropBtn.addEventListener("click", () => {
+
+    if (!currentImage) return;
+
+    const tempCanvas = document.createElement("canvas");
+
+    const tempCtx = tempCanvas.getContext("2d");
+
+    tempCanvas.width = cropWidth;
+
+    tempCanvas.height = cropHeight;
+
+    tempCtx.drawImage(
+
+        currentImage,
+
+        cropX,
+
+        cropY,
+
+        cropWidth,
+
+        cropHeight,
+
+        0,
+
+        0,
+
+        cropWidth,
+
+        cropHeight
+
+    );
+
+    croppedPreview.src = tempCanvas.toDataURL("image/png");
+
+});
