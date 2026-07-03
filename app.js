@@ -29,6 +29,7 @@ const chooseImage = document.getElementById("chooseImage");
 const cropBtn = document.getElementById("cropBtn");
 
 const croppedPreview = document.getElementById("croppedPreview");
+const downloadBtn = document.getElementById("downloadBtn");
 // ==========================
 // OPEN FILE PICKER
 // ==========================
@@ -226,5 +227,22 @@ cropBtn.addEventListener("click", () => {
     );
 
     croppedPreview.src = tempCanvas.toDataURL("image/png");
+
+});
+// ==========================
+// DOWNLOAD
+// ==========================
+
+downloadBtn.addEventListener("click", () => {
+
+    if (!croppedPreview.src) return;
+
+    const link = document.createElement("a");
+
+    link.href = croppedPreview.src;
+
+    link.download = "cropped-image.png";
+
+    link.click();
 
 });
