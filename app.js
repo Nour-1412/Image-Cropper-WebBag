@@ -122,6 +122,16 @@ canvas.addEventListener("pointermove", (e) => {
 
     cropY = e.clientY - rect.top - cropHeight / 2;
 
+    drawCanvas();
+});
+// ==========================
+// DRAW CANVAS
+// ==========================
+
+function drawCanvas() {
+
+    if (!currentImage) return;
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.drawImage(currentImage, 0, 0);
@@ -130,6 +140,16 @@ canvas.addEventListener("pointermove", (e) => {
 
     ctx.lineWidth = 3;
 
-    ctx.strokeRect(cropX, cropY, cropWidth, cropHeight);
+    ctx.strokeRect(
 
-});
+        cropX,
+
+        cropY,
+
+        cropWidth,
+
+        cropHeight
+
+    );
+
+}
