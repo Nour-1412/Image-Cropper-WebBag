@@ -30,6 +30,7 @@ const cropBtn = document.getElementById("cropBtn");
 
 const croppedPreview = document.getElementById("croppedPreview");
 const downloadBtn = document.getElementById("downloadBtn");
+const aspectRatio = document.getElementById("aspectRatio");
 // ==========================
 // OPEN FILE PICKER
 // ==========================
@@ -244,5 +245,47 @@ downloadBtn.addEventListener("click", () => {
     link.download = "cropped-image.png";
 
     link.click();
+
+});
+// ==========================
+// ASPECT RATIO
+// ==========================
+
+aspectRatio.addEventListener("change", () => {
+
+    switch (aspectRatio.value) {
+
+        case "1:1":
+            cropWidth = 200;
+            cropHeight = 200;
+            break;
+
+        case "4:3":
+            cropWidth = 240;
+            cropHeight = 180;
+            break;
+
+        case "16:9":
+            cropWidth = 320;
+            cropHeight = 180;
+            break;
+
+        case "3:2":
+            cropWidth = 300;
+            cropHeight = 200;
+            break;
+
+        case "9:16":
+            cropWidth = 180;
+            cropHeight = 320;
+            break;
+
+        default:
+            cropWidth = 200;
+            cropHeight = 200;
+
+    }
+
+    drawCanvas();
 
 });
