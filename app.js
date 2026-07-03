@@ -8,6 +8,17 @@ const ctx = canvas.getContext("2d");
 
 let currentImage = null;
 // ==========================
+// CROP RECTANGLE
+// ==========================
+
+let cropX = 100;
+
+let cropY = 100;
+
+let cropWidth = 200;
+
+let cropHeight = 200;
+// ==========================
 // ELEMENTS
 // ==========================
 
@@ -54,6 +65,24 @@ imageInput.addEventListener("change", () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             ctx.drawImage(img, 0, 0);
+
+// إطار القص
+
+ctx.strokeStyle = "#2563eb";
+
+ctx.lineWidth = 3;
+
+ctx.strokeRect(
+
+    cropX,
+
+    cropY,
+
+    cropWidth,
+
+    cropHeight
+
+);
 
         };
 
