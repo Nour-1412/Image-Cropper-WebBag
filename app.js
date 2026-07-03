@@ -172,7 +172,18 @@ canvas.addEventListener("pointermove", (e) => {
 
     cropX = (e.clientX - rect.left) * scaleX - offsetX;
 
-    cropY = (e.clientY - rect.top) * scaleY - offsetY;
+cropY = (e.clientY - rect.top) * scaleY - offsetY;
+
+// منع خروج المستطيل خارج الصورة
+cropX = Math.max(
+    0,
+    Math.min(cropX, canvas.width - cropWidth)
+);
+
+cropY = Math.max(
+    0,
+    Math.min(cropY, canvas.height - cropHeight)
+);
 
     drawCanvas();
 
