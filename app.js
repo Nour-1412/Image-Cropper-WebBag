@@ -320,5 +320,4 @@ restartBtn.addEventListener("click", () => {
     drawCanvas();
 
 });
-aspectRatio.value = "free";
-});
+
