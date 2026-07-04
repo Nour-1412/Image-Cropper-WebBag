@@ -303,6 +303,8 @@ aspectRatio.addEventListener("change", () => {
 });
 restartBtn.addEventListener("click", () => {
 
+    alert("Restart works");
+
     if (!currentImage) return;
 
     cropX = 100;
