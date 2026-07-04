@@ -642,3 +642,24 @@ CANVAS
 
 }
 
+.btn-secondary{
+
+    background:#6b7280;
+
+    color:#fff;
+
+    border:none;
+
+    padding:12px 24px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+.btn-secondary:hover{
+
+    background:#4b5563;
+
+}
