@@ -303,19 +303,21 @@ aspectRatio.addEventListener("change", () => {
 });
 restartBtn.addEventListener("click", () => {
 
-    alert("Restart works");
+    
 
     if (!currentImage) return;
 
-    cropX = 100;
-    cropY = 100;
     cropWidth = 200;
-    cropHeight = 200;
+cropHeight = 200;
+
+cropX = (canvas.width - cropWidth) / 2;
+
+cropY = (canvas.height - cropHeight) / 2;
 
     croppedPreview.src = "";
 
     downloadBtn.style.display = "none";
 
     drawCanvas();
-
+aspectRatio.value = "free";
 });
