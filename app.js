@@ -31,6 +31,7 @@ const cropBtn = document.getElementById("cropBtn");
 const croppedPreview = document.getElementById("croppedPreview");
 const downloadBtn = document.getElementById("downloadBtn");
 const aspectRatio = document.getElementById("aspectRatio");
+const restartBtn = document.getElementById("restartBtn");
 // ==========================
 // OPEN FILE PICKER
 // ==========================
@@ -296,6 +297,22 @@ aspectRatio.addEventListener("change", () => {
             cropHeight = 200;
 
     }
+
+    drawCanvas();
+
+});
+restartBtn.addEventListener("click", () => {
+
+    if (!currentImage) return;
+
+    cropX = 100;
+    cropY = 100;
+    cropWidth = 200;
+    cropHeight = 200;
+
+    croppedPreview.src = "";
+
+    downloadBtn.style.display = "none";
 
     drawCanvas();
 
